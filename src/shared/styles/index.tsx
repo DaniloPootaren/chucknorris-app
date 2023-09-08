@@ -1,4 +1,4 @@
-import {ViewStyle} from 'react-native';
+import {TextStyle, ViewStyle} from 'react-native';
 
 export const VStack: ViewStyle = {
   flexDirection: 'column',
@@ -21,4 +21,9 @@ export const CenterLayout: ViewStyle = {
   flex: 1,
   justifyContent: 'center',
   alignItems: 'center',
+};
+
+export const BoldText: TextStyle = {
+  fontWeight: 'bold',
+  fontSize: 16,
 };
