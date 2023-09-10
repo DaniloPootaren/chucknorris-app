@@ -5,18 +5,23 @@ import Button from '../Button';
 
 interface Props {
   joke: string;
+  fetchJoke: () => void;
 }
 
 const JokeHolder = (props: Props) => {
-  const {joke} = props;
+  const {joke, fetchJoke} = props;
+
+  const handleNext = () => {
+    fetchJoke();
+  };
+
   return joke ? (
     <View>
       <View style={styles.container}>
         <Text style={styles.label}>"{joke}"</Text>
       </View>
       <View style={styles.actions}>
-        <Button label="Prev" onPress={() => console.log('Prev')} />
-        <Button label="Next" onPress={() => console.log('Next')} />
+        <Button label="HahaHaha 😂" onPress={handleNext} />
       </View>
     </View>
   ) : (
@@ -42,7 +47,7 @@ const styles = StyleSheet.create({
   actions: {
     height: 50,
     marginTop: 20,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
   },

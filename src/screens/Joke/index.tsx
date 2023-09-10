@@ -28,6 +28,7 @@ const JokeScreen = () => {
   }, []);
 
   const fetchData = async () => {
+    Tts.stop();
     setLoading(true);
     try {
       const joke = await (await api.getRandomJokeByCategory(category)).data;
@@ -43,7 +44,7 @@ const JokeScreen = () => {
   return (
     <View style={[MainLayout, CenterLayout]}>
       <Image source={Logo} height={300} />
-      <JokeHolder joke={joke?.value as string} />
+      <JokeHolder fetchJoke={fetchData} joke={joke?.value as string} />
       {loading && <Loader />}
     </View>
   );

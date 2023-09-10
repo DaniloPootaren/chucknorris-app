@@ -1,7 +1,9 @@
 export const colorPalette = {
-  primaryColor: '#F05A24',
-  secondaryColor: '#23527c',
+  primaryColor: '#F15923',
+  secondaryColor: '#28ABE2',
   white: '#FFFF',
   overlayBackground: 'rgba(0, 0, 0, 0.5)',
   grey: '#CCCCCC',
+  black: 'black',
+  paleBlue: '#9bcceb',
 };

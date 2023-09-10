@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {colorPalette} from '../../colors';
+import {DIMENSIONS} from '../../constants/dimensions';
 
 interface Props {
   label: string;
@@ -20,16 +21,17 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    width: 80,
+    minWidth: 300,
     height: 40,
     margin: 10,
-    borderWidth: 2,
     padding: 5,
     borderColor: colorPalette.grey,
     borderRadius: 4,
+    backgroundColor: colorPalette.secondaryColor,
   },
   label: {
     fontWeight: 'bold',
+    color: colorPalette.white,
   },
 });
 export default Button;

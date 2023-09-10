@@ -60,19 +60,11 @@ const CategoryCard = (props: Props) => {
       style={[styles.container]}
       onPress={() => navigation.navigate(RouteName.JOKE, {category: label})}>
       <Avatar>
-        <Icon
-          name={renderIconName()}
-          size={20}
-          color={colorPalette.primaryColor}
-        />
+        <Icon name={renderIconName()} size={20} color={colorPalette.white} />
       </Avatar>
       <Text style={[BoldText, styles.label]}>{label}</Text>
       <View style={styles.chevronContainer}>
-        <Icon
-          name="chevron-right"
-          size={20}
-          color={colorPalette.secondaryColor}
-        />
+        <Icon name="chevron-right" size={20} color={colorPalette.white} />
       </View>
     </Pressable>
   );
@@ -83,6 +75,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    backgroundColor: colorPalette.secondaryColor,
     borderRadius: 4,
     borderColor: colorPalette.primaryColor,
     borderWidth: 0.5,
@@ -92,6 +85,7 @@ const styles = StyleSheet.create({
   },
   label: {
     textTransform: 'capitalize',
+    color: colorPalette.white,
   },
   chevronContainer: {
     width: 100,
