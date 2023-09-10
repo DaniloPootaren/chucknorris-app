@@ -1,11 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Pressable} from 'react-native';
 import {colorPalette} from '../../colors';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Category} from '../../models';
 import {BoldText} from '../../styles';
 import Avatar from '../Avatar';
+import {useNavigation} from '@react-navigation/native';
+import {RouteName} from '../../constants/routing';
 
 interface Props {
   label: string | Category;
@@ -51,8 +53,12 @@ const CategoryCard = (props: Props) => {
     }
   };
 
+  const navigation = useNavigation<any>();
+
   return (
-    <View style={[styles.container]}>
+    <Pressable
+      style={[styles.container]}
+      onPress={() => navigation.navigate(RouteName.JOKE)}>
       <Avatar>
         <Icon
           name={renderIconName()}
@@ -68,7 +74,7 @@ const CategoryCard = (props: Props) => {
           color={colorPalette.secondaryColor}
         />
       </View>
-    </View>
+    </Pressable>
   );
 };
 
