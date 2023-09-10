@@ -21,12 +21,10 @@ const JokeHolder = (props: Props) => {
         <Text style={styles.label}>"{joke}"</Text>
       </View>
       <View style={styles.actions}>
-        <Button label="HahaHaha 😂" onPress={handleNext} />
+        <Button label="HahaHaha!! 😂" onPress={handleNext} />
       </View>
     </View>
-  ) : (
-    <></>
-  );
+  ) : null;
 };
 
 const styles = StyleSheet.create({
@@ -40,13 +38,13 @@ const styles = StyleSheet.create({
     borderColor: colorPalette.grey,
   },
   label: {
-    fontSize: 16,
+    fontSize: 18,
     fontStyle: 'italic',
     fontWeight: 'bold',
   },
   actions: {
     height: 50,
-    marginTop: 20,
+    marginTop: '30%',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
