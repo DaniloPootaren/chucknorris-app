@@ -23,7 +23,7 @@ const HomeScreen = () => {
 
   return (
     <View style={[MainLayout]}>
-      <Text style={[HeadingText, styles.heading]}>Find Your Passion</Text>
+      <Text style={[HeadingText, styles.heading]}>Dive into Chuck's Jokes</Text>
       <FlatList
         data={categories}
         renderItem={object => <CategoryCard label={object.item} />}
