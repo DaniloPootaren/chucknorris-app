@@ -58,7 +58,7 @@ const CategoryCard = (props: Props) => {
   return (
     <Pressable
       style={[styles.container]}
-      onPress={() => navigation.navigate(RouteName.JOKE)}>
+      onPress={() => navigation.navigate(RouteName.JOKE, {category: label})}>
       <Avatar>
         <Icon
           name={renderIconName()}
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 4,
     borderColor: colorPalette.primaryColor,
-    borderWidth: 1,
+    borderWidth: 0.5,
     height: 70,
     marginVertical: 5,
     paddingHorizontal: 15,

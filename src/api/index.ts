@@ -6,8 +6,8 @@ const getRandomJoke = (): Promise<{data: Joke}> => {
   return axios.get(`${BASE_URL}/jokes/random`);
 };
 
-const getRandomJokeByCategory = (): Promise<{data: Joke}> => {
-  return axios.get(`${BASE_URL}/jokes/random?category={category}`);
+const getRandomJokeByCategory = (category: string): Promise<{data: Joke}> => {
+  return axios.get(`${BASE_URL}/jokes/random?category=${category}`);
 };
 
 const getCategories = (): Promise<{data: Category[]}> => {
