@@ -14,7 +14,7 @@ export const HStack: ViewStyle = {
 
 export const MainLayout: ViewStyle = {
   flex: 1,
-  padding: 10,
+  padding: 20,
 };
 
 export const CenterLayout: ViewStyle = {
