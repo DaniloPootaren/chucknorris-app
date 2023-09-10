@@ -1,6 +1,6 @@
 import {RouteProp, useRoute} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {Image, ImageBackground, Text, View} from 'react-native';
+import {Image, View} from 'react-native';
 import {api} from '../../api';
 import Loader from '../../shared/components/Loader';
 import {Joke} from '../../shared/models';

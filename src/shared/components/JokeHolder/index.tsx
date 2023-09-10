@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {colorPalette} from '../../colors';
+import Button from '../Button';
 
 interface Props {
   joke: string;
@@ -9,8 +10,14 @@ interface Props {
 const JokeHolder = (props: Props) => {
   const {joke} = props;
   return joke ? (
-    <View style={styles.container}>
-      <Text style={styles.label}>"{joke}"</Text>
+    <View>
+      <View style={styles.container}>
+        <Text style={styles.label}>"{joke}"</Text>
+      </View>
+      <View style={styles.actions}>
+        <Button label="Prev" onPress={() => console.log('Prev')} />
+        <Button label="Next" onPress={() => console.log('Next')} />
+      </View>
     </View>
   ) : (
     <></>
@@ -31,6 +38,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontStyle: 'italic',
     fontWeight: 'bold',
+  },
+  actions: {
+    height: 50,
+    marginTop: 20,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
 });
 
