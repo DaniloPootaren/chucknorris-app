@@ -27,3 +27,5 @@ export const BoldText: TextStyle = {
   fontWeight: 'bold',
   fontSize: 16,
 };
+
+export const HeadingText: TextStyle = {...BoldText, ...{fontSize: 18}};
