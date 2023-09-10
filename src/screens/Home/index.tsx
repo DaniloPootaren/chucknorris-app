@@ -2,22 +2,27 @@ import React, {useEffect, useState} from 'react';
 import {FlatList, Text, View} from 'react-native';
 import {api} from '../../api';
 import CategoryCard from '../../shared/components/CategoryCard';
+import Loader from '../../shared/components/Loader';
 import {Category} from '../../shared/models';
 import {HeadingText, MainLayout} from '../../shared/styles';
 
 const HomeScreen = () => {
   const [categories, setCategories] = useState<Category[]>([]);
+  const [loading, setLoading] = useState<boolean>();
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
+    setLoading(true);
     try {
       const data = await api.getCategories();
       setCategories(data.data);
     } catch (e) {
       console.log('error', e);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -28,6 +33,7 @@ const HomeScreen = () => {
         data={categories}
         renderItem={object => <CategoryCard label={object.item} />}
       />
+      {loading && <Loader />}
     </View>
   );
 };
