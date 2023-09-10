@@ -5,6 +5,7 @@ import CategoryCard from '../../shared/components/CategoryCard';
 import Loader from '../../shared/components/Loader';
 import {Category} from '../../shared/models';
 import {HeadingText, MainLayout} from '../../shared/styles';
+import SplashScreen from 'react-native-splash-screen';
 
 const HomeScreen = () => {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -23,6 +24,7 @@ const HomeScreen = () => {
       console.log('error', e);
     } finally {
       setLoading(false);
+      SplashScreen.hide();
     }
   };
 
